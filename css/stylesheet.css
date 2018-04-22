@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    box-sizing: content-box;
+}
+.paper{
+
+}
+/*颜色样式*/
+.hint{
+    color: #2196F3;
+}
+.btn.hint{
+    color: #E3F2FD;
+    background: #2196F3;
+    border: 1px solid #BBDEFB;
+}
+.warning{
+    color: #FF9800
+}
+.btn.warning{
+    color: #FFF3E0;
+    background: #FF9800;
+    border: 1px solid #FFE0B2;
+}
+
+.error{
+    color: #F44336;
+}
+.btn.error{
+    color: #FFFBEE;
+    background: #F44336;
+    border: 1px solid #FFCDD2;
+}
+/*表单样式*/
+.btn{
+    cursor: pointer;
+    /*-webkit-appearance: initial;*/
+    /*-moz-appearance: inherit;*/
+}
+.btn,.form-line > *{
+    display: inline-block;
+    border: 1px solid #9E9E9E;
+    background: #FAFAFA;
+    padding: 5px 10px;
+    /*margin: 10px;*/
+    border-radius: 2px;
+}
+.btn-group, .form-line{
+    display: inline-block;
+    word-spacing: -7px;
+}
+.btn-group .btn,
+.form-line > *{
+    border-radius: 0;
+    word-spacing: normal;
+}
+.btn-group .btn:first-child,
+.form-line > *:first-child{
+    border-radius: 0 0 2px 2px;
+}
+.btn-group .btn:last-child,
+.form-line > *:last-child{
+    border-radius: 2px 2px 0 0;
+}
