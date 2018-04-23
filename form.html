@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+
+<!--<div class="title-all" id="title_all">-->
+    <!--<ul>-->
+        <!--<li>-->
+            <!--<img src="img/personcard-on.png" style="width: 56px">-->
+            <!--<p style="color: #5677fc">身份证审核</p>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img src="img/phone-off.png" style="width: 56px">-->
+            <!--<p>通话验证</p>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img src="img/baseinfo-off.png" style="width: 56px">-->
+            <!--<p>基本信息</p>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img src="img/companyinfo-off.png" style="width: 56px">-->
+            <!--<p>公司信息</p>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img src="img/otherinfo-off.png" style="width: 56px">-->
+            <!--<p>其他信息</p>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img src="img/loaninfo-off.png" style="width: 56px">-->
+            <!--<p>借款资料</p>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img src="img/redai-off.png" style="width: 56px">-->
+            <!--<p>雷达验证</p>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<img src="img/weixin-off.png" style="width: 56px">-->
+            <!--<p>微信、支付宝信息</p>-->
+        <!--</li>-->
+    <!--</ul>-->
+<!--</div>-->
+<form action="" id="form_all" class="form-all" method="post">
+
+    <div class="public-class" style="display: block;">
+        <!--输入框-->
+        <div class="title display-inline left-tb-border vertical-middle">身份证号码</div>
+        <input type="text" class="input-style display-inline cancel-space vertical-middle">
+        <button class="button-style display-inline right-tb-border cancel-space vertical-middle">下一步</button>
+        <!--单选框-->
+        <div class="text-left margin-auto">
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio" value="0" checked>
+                <span class="demo--radioInput"></span>车
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio" value="1">
+                <span class="demo--radioInput"></span>房
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio" value="2">
+                <span class="demo--radioInput"></span>信用
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio" value="3">
+                <span class="demo--radioInput"></span>产调
+            </label>
+        </div>
+        <!--多选框-->
+        <div class="text-left margin-auto" >
+            <label class="demo--label">
+                <input type="checkbox" name="fei" checked value="2" style="display: none" class="true-radio">
+                <span class="party"></span>信用
+            </label>
+            <label class="demo--label">
+                <input type="checkbox" name="fei" value="3" style="display: none" class="true-radio">
+                <span class="party"></span>产调
+            </label>
+        </div>
+
+        <!--下拉列表-->
+        <div class="select-style">
+            <div class="select-put" id="select_put">
+                <p>请选择地区</p>
+                <span class="jiao"></span>
+            </div>
+            <div class="drop-select" id="drop_select" style="display: none">
+                <ul>
+                    <li><a href="#">苏州</a></li>
+                    <li><a href="#">上海</a></li>
+                    <li><a href="#">昆山</a></li>
+                    <li><a href="#">石家庄</a></li>
+                    <li><a href="#">武汉</a></li>
+                    <li><a href="#">北京</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="person-card public-class" style="text-align: center;"></div>
+
+
+</form>
+</body>
+<script>
+    window.onload = function () {
+        let _icon = ['personcard','phone','baseinfo','companyinfo','otherinfo','loaninfo','redai','weixin']
+        let _title_all = document.getElementById('title_all');
+        let _title_all_list = _title_all.getElementsByTagName('li');
+        let _form_all = document.getElementById('form_all');
+        let _public_class = _form_all.getElementsByClassName('public-class');
+        let _select_put = document.getElementById("select_put");
+        let _drop_select = document.getElementById("drop_select");
+        let _drop_select_list = _drop_select.getElementsByTagName("li");
+
+        let lastOnOne = 0;
+        for (let i = 0; i < _title_all_list.length; i++) {
+            (function (index) {
+                _title_all_list[i].onclick = function () {
+                    console.log(index);
+                    console.log(lastOnOne);
+                    if (index !== lastOnOne) {
+                        _title_all_list[index].getElementsByTagName('img')[0].src = 'img/' + _icon[index] + '-on.png';
+                        _title_all_list[index].getElementsByTagName('p')[0].style.color = '#5677fc';
+                        _public_class[index].style.display = "block";
+                        _title_all_list[index].getElementsByTagName('img')[0].className = "active";
+                        _title_all_list[lastOnOne].getElementsByTagName('img')[0].src = 'img/' + _icon[lastOnOne] + '-off.png';
+                        _title_all_list[lastOnOne].getElementsByTagName('p')[0].style.color = '#666';
+                        _public_class[lastOnOne].style.display = "none";
+                        // _public_class[lastOnOne].style.transform = "translateX(-1600px)";
+                    }
+                    lastOnOne = index;
+                }
+            })(i);
+        }
+        _select_put.onclick = function () {
+            if(_drop_select.style.display === "block"){
+                _drop_select.style.display = "none";
+            }else{
+                _drop_select.style.display = "block";
+            }
+        };
+        console.log(_drop_select.innerHTML);
+        for (let j = 0;j<_drop_select_list.length;j++){
+            //console.log(_drop_select_list[j].getElementsByTagName("a")[0].innerHTML);
+            _drop_select_list[j].onclick = function () {
+                _drop_select.style.display = "none";
+                _select_put.getElementsByTagName("p")[0].innerHTML = _drop_select_list[j].getElementsByTagName("a")[0].innerHTML;
+            }
+        }
+    }
+</script>
+</html>
