@@ -6,7 +6,82 @@
     <title>form</title>
     <link rel="stylesheet" href="css/form.css">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
 
+    .display-inline {
+        display: inline-block;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+
+    .positon-relative {
+        position: relative;
+    }
+
+    .offset-left{
+        margin-left: 5px;
+    }
+
+    .screening {
+        text-align: center;
+        font-size: 14px;
+        width: 90px;
+        height: 42px;
+        line-height: 42px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        color: #666;
+        vertical-align: top;
+        outline: none;
+    }
+
+    .screening span {
+        padding-right: 5px;
+    }
+
+    .screening p {
+        transform: rotate(90deg);
+    }
+
+    .screening:hover {
+        color: #666;
+        border-color: #ccc;
+        background-color: #eee;
+    }
+    .company-drop {
+        text-indent: 20px;
+        position: absolute;
+        top: 42px;
+        left: 0;
+        width: 150px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        /*box-shadow: 0 0 10px rgba(0,0,0,0.2);*/
+    }
+
+    .company-drop ul li {
+        font-size: 14px;
+        height: 40px;
+        line-height: 40px;
+        color: #666;
+    }
+
+    .company-drop ul li:hover {
+        color: #666;
+        background-color: #eee;
+    }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <body>
 
 <!--<div class="title-all" id="title_all">-->
@@ -45,13 +120,15 @@
 <!--</li>-->
 <!--</ul>-->
 <!--</div>-->
-<form action="" id="form_all" class="form-all" method="post">
 
+
+<form action="" id="form_all" class="form-all" method="post">
     <div class="public-class" style="display: block;">
         <!--输入框-->
-        <div class="title display-inline left-tb-border vertical-middle">身份证号码</div>
-        <input type="text" class="input-style display-inline cancel-space vertical-middle">
-        <button class="button-style display-inline right-tb-border cancel-space vertical-middle">下一步</button>
+        <div style="word-spacing: -7px">
+            <input type="text" class="input-style display-inline vertical-middle">
+            <button class="button-style display-inline vertical-middle">身份证查询</button>
+        </div>
         <!--单选框-->
         <div class="text-left margin-auto">
             <label class="demo--label">
@@ -84,8 +161,8 @@
         </div>
 
         <!--下拉列表-->
-        <div class="select-style">
-            <div class="select-put" id="select_put">
+        <div class="select-style position-relative" id="select_all">
+            <div class="select-put" id="select_put" tabindex="0" onfocus="screenOnDrop('drop_select')" onblur="screenHiddenDrop('drop_select')">
                 <p>请选择地区</p>
                 <span class="jiao"></span>
             </div>
@@ -99,26 +176,81 @@
                     <li><a href="#">北京</a></li>
                 </ul>
             </div>
-
         </div>
 
     </div>
 
-    <div class="person-card public-class" style="text-align: center;"></div>
+    <div style="word-spacing: -7px">
+        <button class="button-style right-btn display-inline">确认按钮</button>
+        <button class="button-style cancel-btn display-inline">取消按钮</button>
+    </div>
 
-
+    <textarea name="textarea" class="textarea-style"></textarea>
+    <div class="position-relative" style="width: 220px">
+        <input type="text" id="input_search" class="input-style" onblur="hiddenDrop('company_drop')" onfocus="onDrop('company_drop','input_search')">
+        <div class="drop-select" id="company_drop" style="display: none;">
+            <ul>
+                <li><a href="#">苏州</a></li>
+                <li><a href="#">上海</a></li>
+                <li><a href="#">昆山</a></li>
+                <li><a href="#">石家庄</a></li>
+                <li><a href="#">武汉</a></li>
+                <li><a href="#">北京</a></li>
+            </ul>
+        </div>
+    </div>
 </form>
 </body>
 <script>
+    function onDrop(dropCode,inputCode){
+        let _company_drop = document.getElementById(dropCode);
+        let _input_search = document.getElementById(inputCode);
+        _company_drop.style.display = "block";
+        for (var i=0;i<_company_drop.querySelectorAll('li').length;i++){
+            _company_drop.querySelectorAll('li')[i].onmousedown = function () {
+                _input_search.value = this.innerText;
+            }
+        }
+    }
+
+    function hiddenDrop(dropCode){
+        let _company_drop = document.getElementById(dropCode);
+        _company_drop.style.display = "none";
+    }
+    function screenOnDrop(dropCode){
+        let _screening_drop = document.getElementById(dropCode);
+        _screening_drop.style.display = "block";
+    }
+
+    function screenHiddenDrop(dropCode){
+        let _screening_drop = document.getElementById(dropCode);
+        _screening_drop.style.display = "none";
+    }
+
     window.onload = function () {
         let _icon = ['personcard', 'phone', 'baseinfo', 'companyinfo', 'otherinfo', 'loaninfo', 'redai', 'weixin']
-
+        let _select_all = document.getElementById('select_all');
         let _form_all = document.getElementById('form_all');
         let _public_class = _form_all.getElementsByClassName('public-class');
         let _select_put = document.getElementById("select_put");
         let _drop_select = document.getElementById("drop_select");
         let _drop_select_list = _drop_select.querySelectorAll("li");
+        let _input_search = document.getElementById("input_search");
+        let _company_drop = document.getElementById("company_drop");
         let lastOnOne = 0;
+        _select_put.onmousedown = function () {
+            if (_drop_select.style.display === "none") {
+                _drop_select.style.display = "block";
+            }else{
+                _drop_select.style.display = "none";
+            }
+        };
+        for (let j = 0; j < _drop_select_list.length; j++) {
+            _drop_select_list[j].onmousedown = function () {
+                _drop_select.style.display = "none";
+                _select_put.querySelector("p").innerHTML = _drop_select_list[j].querySelector("a").innerHTML;
+            }
+        }
         // for (let i = 0; i < _title_all_list.length; i++) {
         //     (function (index) {
         //         _title_all_list[i].onclick = function () {
@@ -137,22 +269,8 @@
         //             lastOnOne = index;
         //         }
         //     })(i);
-        _select_put.onclick = function () {
-            if (_drop_select.style.display === "block") {
-                _drop_select.style.display = "none";
-            } else {
-                _drop_select.style.display = "block";
-            }
-        };
-        for (let j = 0; j < _drop_select_list.length; j++) {
-            //console.log(_drop_select_list[j].getElementsByTagName("a")[0].innerHTML);
-            _drop_select_list[j].onclick = function () {
-                _drop_select.style.display = "none";
-                _select_put.querySelector("p").innerHTML = _drop_select_list[j].querySelector("a").innerHTML;
-            }
 
-        }
-    };
+    }
 
 </script>
 </html>
