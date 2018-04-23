@@ -206,7 +206,7 @@
         let _company_drop = document.getElementById(dropCode);
         let _input_search = document.getElementById(inputCode);
         _company_drop.style.display = "block";
-        for (var i=0;i<_company_drop.querySelectorAll('li').length;i++){
+        for (let i=0;i<_company_drop.querySelectorAll('li').length;i++){
             _company_drop.querySelectorAll('li')[i].onmousedown = function () {
                 _input_search.value = this.innerText;
             }
