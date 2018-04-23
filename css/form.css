@@ -365,3 +365,15 @@
   color: #666;
   font-size: 14px;
 }
+
+.company-drop ul li {
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  color: #666;
+}
+
+.company-drop ul li:hover {
+  color: #666;
+  background-color: #eee;
+}
