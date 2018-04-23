@@ -10,40 +10,40 @@
 <body>
 
 <!--<div class="title-all" id="title_all">-->
-    <!--<ul>-->
-        <!--<li>-->
-            <!--<img src="img/personcard-on.png" style="width: 56px">-->
-            <!--<p style="color: #5677fc">身份证审核</p>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<img src="img/phone-off.png" style="width: 56px">-->
-            <!--<p>通话验证</p>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<img src="img/baseinfo-off.png" style="width: 56px">-->
-            <!--<p>基本信息</p>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<img src="img/companyinfo-off.png" style="width: 56px">-->
-            <!--<p>公司信息</p>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<img src="img/otherinfo-off.png" style="width: 56px">-->
-            <!--<p>其他信息</p>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<img src="img/loaninfo-off.png" style="width: 56px">-->
-            <!--<p>借款资料</p>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<img src="img/redai-off.png" style="width: 56px">-->
-            <!--<p>雷达验证</p>-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--<img src="img/weixin-off.png" style="width: 56px">-->
-            <!--<p>微信、支付宝信息</p>-->
-        <!--</li>-->
-    <!--</ul>-->
+<!--<ul>-->
+<!--<li>-->
+<!--<img src="img/personcard-on.png" style="width: 56px">-->
+<!--<p style="color: #5677fc">身份证审核</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/phone-off.png" style="width: 56px">-->
+<!--<p>通话验证</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/baseinfo-off.png" style="width: 56px">-->
+<!--<p>基本信息</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/companyinfo-off.png" style="width: 56px">-->
+<!--<p>公司信息</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/otherinfo-off.png" style="width: 56px">-->
+<!--<p>其他信息</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/loaninfo-off.png" style="width: 56px">-->
+<!--<p>借款资料</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/redai-off.png" style="width: 56px">-->
+<!--<p>雷达验证</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/weixin-off.png" style="width: 56px">-->
+<!--<p>微信、支付宝信息</p>-->
+<!--</li>-->
+<!--</ul>-->
 <!--</div>-->
 <form action="" id="form_all" class="form-all" method="post">
 
@@ -72,7 +72,7 @@
             </label>
         </div>
         <!--多选框-->
-        <div class="text-left margin-auto" >
+        <div class="text-left margin-auto">
             <label class="demo--label">
                 <input type="checkbox" name="fei" checked value="2" style="display: none" class="true-radio">
                 <span class="party"></span>信用
@@ -111,50 +111,48 @@
 </body>
 <script>
     window.onload = function () {
-        let _icon = ['personcard','phone','baseinfo','companyinfo','otherinfo','loaninfo','redai','weixin']
-        let _title_all = document.getElementById('title_all');
-        let _title_all_list = _title_all.getElementsByTagName('li');
+        let _icon = ['personcard', 'phone', 'baseinfo', 'companyinfo', 'otherinfo', 'loaninfo', 'redai', 'weixin']
+
         let _form_all = document.getElementById('form_all');
         let _public_class = _form_all.getElementsByClassName('public-class');
         let _select_put = document.getElementById("select_put");
         let _drop_select = document.getElementById("drop_select");
-        let _drop_select_list = _drop_select.getElementsByTagName("li");
-
+        let _drop_select_list = _drop_select.querySelectorAll("li");
         let lastOnOne = 0;
-        for (let i = 0; i < _title_all_list.length; i++) {
-            (function (index) {
-                _title_all_list[i].onclick = function () {
-                    console.log(index);
-                    console.log(lastOnOne);
-                    if (index !== lastOnOne) {
-                        _title_all_list[index].getElementsByTagName('img')[0].src = 'img/' + _icon[index] + '-on.png';
-                        _title_all_list[index].getElementsByTagName('p')[0].style.color = '#5677fc';
-                        _public_class[index].style.display = "block";
-                        _title_all_list[index].getElementsByTagName('img')[0].className = "active";
-                        _title_all_list[lastOnOne].getElementsByTagName('img')[0].src = 'img/' + _icon[lastOnOne] + '-off.png';
-                        _title_all_list[lastOnOne].getElementsByTagName('p')[0].style.color = '#666';
-                        _public_class[lastOnOne].style.display = "none";
-                        // _public_class[lastOnOne].style.transform = "translateX(-1600px)";
-                    }
-                    lastOnOne = index;
-                }
-            })(i);
-        }
+        // for (let i = 0; i < _title_all_list.length; i++) {
+        //     (function (index) {
+        //         _title_all_list[i].onclick = function () {
+        //             console.log(index);
+        //             console.log(lastOnOne);
+        //             if (index !== lastOnOne) {
+        //                 _title_all_list[index].getElementsByTagName('img')[0].src = 'img/' + _icon[index] + '-on.png';
+        //                 _title_all_list[index].getElementsByTagName('p')[0].style.color = '#5677fc';
+        //                 _public_class[index].style.display = "block";
+        //                 _title_all_list[index].getElementsByTagName('img')[0].className = "active";
+        //                 _title_all_list[lastOnOne].getElementsByTagName('img')[0].src = 'img/' + _icon[lastOnOne] + '-off.png';
+        //                 _title_all_list[lastOnOne].getElementsByTagName('p')[0].style.color = '#666';
+        //                 _public_class[lastOnOne].style.display = "none";
+        //                 // _public_class[lastOnOne].style.transform = "translateX(-1600px)";
+        //             }
+        //             lastOnOne = index;
+        //         }
+        //     })(i);
         _select_put.onclick = function () {
-            if(_drop_select.style.display === "block"){
+            if (_drop_select.style.display === "block") {
                 _drop_select.style.display = "none";
-            }else{
+            } else {
                 _drop_select.style.display = "block";
             }
         };
-        console.log(_drop_select.innerHTML);
-        for (let j = 0;j<_drop_select_list.length;j++){
+        for (let j = 0; j < _drop_select_list.length; j++) {
             //console.log(_drop_select_list[j].getElementsByTagName("a")[0].innerHTML);
             _drop_select_list[j].onclick = function () {
                 _drop_select.style.display = "none";
-                _select_put.getElementsByTagName("p")[0].innerHTML = _drop_select_list[j].getElementsByTagName("a")[0].innerHTML;
+                _select_put.querySelector("p").innerHTML = _drop_select_list[j].querySelector("a").innerHTML;
             }
+
         }
-    }
+    };
+
 </script>
 </html>
