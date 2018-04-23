@@ -272,7 +272,6 @@
 .select-style{
   outline: none;
   width: 150px;
-  text-align: center;
   cursor: pointer;
 }
 
@@ -301,7 +300,7 @@
 
 .select-put p{
   width: 120px;
-  text-align: center;
+  padding-left: 20px;
   border-right: 1px solid #4e6cef;
 }
 
