@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="css/form.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        /*box-sizing: border-box;*/
+    }
+
+    .sfq {
+        margin: auto;
+        width: 800px;
+        height: 300px;
+        border: 1px solid #eeeeee;
+        font-size: 0;
+        overflow: hidden;
+    }
+
+    .sfq-ul li {
+        position: relative;
+        list-style: none;
+        /*display: inline-block;*/
+        width: 160px;
+        height: 300px;
+        float: left;
+        transition: width 0.3s ease-in-out 0s;
+    }
+
+    .sfq-ul li p {
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 300px;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .sfq-ul li img {
+        height: 300px;
+    }
+
+    .sfq-ul:hover li {
+        width: 100px;
+    }
+
+    .sfq-ul:hover p {
+        opacity: 1;
+    }
+
+    .sfq-ul li:hover {
+        width: 400px;
+    }
+
+    .sfq-ul li:hover p {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .sfq-ul li:hover span {
+        opacity: 1;
+        transform: translateX(100px);
+    }
+
+    .sfq-ul li p span {
+        opacity: 1;
+        transition: transform 0.3s ease-in-out 0s;
+    }
+
+    .text {
+        color: #fff;
+        display: block;
+        font-size: 24px;
+        padding-top: 100px;
+        padding-left: 20px;
+    }
+
+    .line {
+        display: block;
+        margin-left: 20px;
+        background-color: #fff;
+        height: 1px;
+        width: 120px;
+    }
+</style>
+<body>
+
+<!--<div class="sfq">-->
+<!--<ul class="sfq-ul">-->
+<!--<li>-->
+<!--<img src="img/1.jpg">-->
+<!--<p>-->
+<!--<span class="text">MIOOLOY</span>-->
+<!--<span class="line"></span>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/2.jpg">-->
+<!--<p>-->
+<!--<span class="text">MIOOLOY</span>-->
+<!--<span class="line"></span>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/3.jpg">-->
+<!--<p>-->
+<!--<span class="text">MIOOLOY</span>-->
+<!--<span class="line"></span>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/4.jpg">-->
+<!--<p>-->
+<!--<span class="text">MIOOLOY</span>-->
+<!--<span class="line"></span>-->
+<!--</p>-->
+<!--</li>-->
+<!--<li>-->
+<!--<img src="img/5.jpg">-->
+<!--<p>-->
+<!--<span class="text">MIOOLOY</span>-->
+<!--<span class="line"></span>-->
+<!--</p>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--<div>-->
+<!--<ul id="test">-->
+
+<!--</ul>-->
+<!--</div>-->
+onblur="hiddenDrop('company_drop')" onfocus="onDrop('company_drop','input_select')"
+onblur="hiddenDrop('company_drop')" onfocus="onDrop('company_drop','input_select')"
+onblur="hiddenDrop('company_drop')" onfocus="onDrop('company_drop','input_select')"
+<div style="margin: 20px">
+    标题加选择输入框 : <br><br>
+    <div class="title-and-input" style="word-spacing: -5px">
+        <div class="display-inline button-style right-btn default-btn vertical-top right-tb-border-none">性别</div>
+        <div class="input-width display-inline vertical-top">
+            <input type="text" class="input_select input-style input-style-default left-tb-border-none"
+                   placeholder="请选择...">
+            <div class="drop-select company_drop" style="display: none;">
+                <ul>
+                    <li><a href="#">男</a></li>
+                    <li><a href="#">女</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div style="margin: 20px">
+    标题加选择输入框 : <br><br>
+    <div class="title-and-input" style="word-spacing: -5px">
+        <div class="display-inline button-style right-btn default-btn vertical-top right-tb-border-none">性别</div>
+        <div class="input-width display-inline vertical-top">
+            <input type="text" class="input_select input-style input-style-default left-tb-border-none"
+                   placeholder="请选择...">
+            <div class="drop-select company_drop" style="display: none;">
+                <ul>
+                    <li><a href="#">男</a></li>
+                    <li><a href="#">女</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div style="margin: 20px">
+    标题加选择输入框 : <br><br>
+    <div class="title-and-input" style="word-spacing: -5px">
+        <div class="display-inline button-style right-btn default-btn vertical-top right-tb-border-none">性别</div>
+        <div class="input-width display-inline vertical-top">
+            <input type="text" class="input_select input-style input-style-default left-tb-border-none"
+                   placeholder="请选择...">
+            <div class="drop-select company_drop" style="display: none;">
+                <ul>
+                    <li><a href="#">男</a></li>
+                    <li><a href="#">女</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/test.js"></script>
+<!--<script>-->
+<!--var c = new Test();-->
+<!--var a = ["上海","苏州","无锡","常州","南京"];-->
+<!--c.prototype = {-->
+<!--"ulId" : "test",-->
+<!--"liLength" : a.length,-->
+<!--"array" : a-->
+<!--};-->
+<!--console.log(c);-->
+<!--c.createList();-->
+<!--</script>-->
+<script>
+    window.onload = function () {
+        let _input_select = document.getElementsByClassName('input_select');
+        console.log(_input_select);
+        for (let i = 0; i < _input_select.length; i++) {
+            if (_input_select[i].type === 'text') {
+                _input_select[i].onfocus = function () {
+                    let _drop_select = _input_select[i].parentNode.getElementsByClassName('company_drop')[0];
+                    _drop_select.style.display = 'block';
+                };
+                _input_select[i].onblur = function () {
+                    let _drop_select = _input_select[i].parentNode.getElementsByClassName('company_drop')[0];
+                    _drop_select.style.display = 'none';
+                }
+            }
+        }
+    };
+    // function onDrop(dropCode,inputCode){
+    //     let _company_drop = document.getElementById(dropCode);
+    //     let _input_select = document.getElementById(inputCode);
+    //     _company_drop.style.display = "block";
+    //     for (let i=0;i<_company_drop.querySelectorAll('li').length;i++){
+    //         _company_drop.querySelectorAll('li')[i].onmousedown = function () {
+    //             _input_select.value = this.innerText;
+    //         }
+    //     }
+    // }
+    //
+    // function hiddenDrop(dropCode){
+    //     let _company_drop = document.getElementById(dropCode);
+    //     _company_drop.style.display = "none";
+    // }
+</script>
+</body>
+</html>

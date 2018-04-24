@@ -46,74 +46,59 @@
 <!--</ul>-->
 <!--</div>-->
 
-
 <form action="" id="form_all" class="form-all" method="post">
-    <div class="public-class" style="display: block;">
-        <!--输入框-->
-        <div style="word-spacing: -7px">
-            <input type="text" class="input-style display-inline vertical-middle">
-            <button class="button-style display-inline vertical-middle">身份证查询</button>
-        </div>
-        <!--单选框-->
-        <div class="text-left margin-auto">
-            <label class="demo--label">
-                <input class="demo--radio" type="radio" name="demo-radio" value="0" checked>
-                <span class="demo--radioInput"></span>车
-            </label>
-            <label class="demo--label">
-                <input class="demo--radio" type="radio" name="demo-radio" value="1">
-                <span class="demo--radioInput"></span>房
-            </label>
-            <label class="demo--label">
-                <input class="demo--radio" type="radio" name="demo-radio" value="2">
-                <span class="demo--radioInput"></span>信用
-            </label>
-            <label class="demo--label">
-                <input class="demo--radio" type="radio" name="demo-radio" value="3">
-                <span class="demo--radioInput"></span>产调
-            </label>
-        </div>
-        <!--多选框-->
-        <div class="text-left margin-auto">
-            <label class="demo--label">
-                <input type="checkbox" name="fei" checked value="2" style="display: none" class="true-radio">
-                <span class="party"></span>信用
-            </label>
-            <label class="demo--label">
-                <input type="checkbox" name="fei" value="3" style="display: none" class="true-radio">
-                <span class="party"></span>产调
-            </label>
-        </div>
-
-        <!--下拉列表-->
-        <div class="select-style position-relative" id="select_all">
-            <div class="select-put" id="select_put" tabindex="0" onfocus="screenOnDrop('drop_select')" onblur="screenHiddenDrop('drop_select')">
-                <p>请选择地区</p>
-                <span class="jiao"></span>
-            </div>
-            <div class="drop-select" id="drop_select" style="display: none">
-                <ul>
-                    <li><a href="#">苏州</a></li>
-                    <li><a href="#">上海</a></li>
-                    <li><a href="#">昆山</a></li>
-                    <li><a href="#">石家庄</a></li>
-                    <li><a href="#">武汉</a></li>
-                    <li><a href="#">北京</a></li>
-                </ul>
-            </div>
-        </div>
-
+<div class="display-inline vertical-top">
+    <!--单选框-->
+    <div class="text-left margin-auto" style="margin: 10px">
+        单选框 : <br>
+        <label class="demo-label">
+            <input class="demo-radio" type="radio" name="demo-radio" value="0" checked>
+            <span class="demo-radioInput"></span>车
+        </label>
+        <label class="demo-label">
+            <input class="demo-radio" type="radio" name="demo-radio" value="1">
+            <span class="demo-radioInput"></span>房
+        </label>
+        <label class="demo-label">
+            <input class="demo-radio" type="radio" name="demo-radio" value="2">
+            <span class="demo-radioInput"></span>信用
+        </label>
+        <label class="demo-label">
+            <input class="demo-radio" type="radio" name="demo-radio" value="3">
+            <span class="demo-radioInput"></span>产调
+        </label>
+    </div>
+    <!--多选框-->
+    <div class="text-left margin-auto" style="margin: 10px">
+        多选框 : <br>
+        <label class="demo-label">
+            <input type="checkbox" name="fei" checked value="2" style="display: none" class="true-radio">
+            <span class="party"></span>产调
+        </label>
+        <label class="demo-label">
+            <input type="checkbox" name="fei" value="3" style="display: none" class="true-radio">
+            <span class="party"></span>信用
+        </label>
+        <label class="demo-label">
+            <input type="checkbox" name="fei" value="3" style="display: none" class="true-radio">
+            <span class="party"></span>房
+        </label>
+        <label class="demo-label">
+            <input type="checkbox" name="fei" value="3" style="display: none" class="true-radio">
+            <span class="party"></span>车
+        </label>
     </div>
 
-    <div style="word-spacing: -7px">
-        <button class="button-style right-btn display-inline">确认按钮</button>
-        <button class="button-style cancel-btn display-inline">取消按钮</button>
+    <!--下拉列表-->
+    <div style="margin: 20px">
+        下拉列表 :
     </div>
-
-    <textarea name="textarea" class="textarea-style"></textarea>
-    <div class="position-relative" style="width: 220px">
-        <input type="text" id="input_search" class="input-style" placeholder="请选择" onblur="hiddenDrop('company_drop')" onfocus="onDrop('company_drop','input_search')">
-        <div class="drop-select" id="company_drop" style="display: none;">
+    <div class="select-style position-relative" id="select_all">
+        <div class="select-put" id="select_put" tabindex="0" onfocus="screenOnDrop('drop_select')" onblur="screenHiddenDrop('drop_select')">
+            <p>请选择地区</p>
+            <span class="triangle"></span>
+        </div>
+        <div class="drop-select" id="drop_select" style="display: none">
             <ul>
                 <li><a href="#">苏州</a></li>
                 <li><a href="#">上海</a></li>
@@ -122,6 +107,109 @@
                 <li><a href="#">武汉</a></li>
                 <li><a href="#">北京</a></li>
             </ul>
+        </div>
+    </div>
+
+    <!--大按钮-->
+    <div style="margin: 20px 0 20px 20px">
+        大按钮 : <br><br>
+        <button class="display-inline button-style right-btn large-btn">primary</button>
+        <button class="display-inline button-style cancel-btn large-btn">primary</button>
+    </div>
+    <!--默认按钮-->
+    <div style="margin: 20px 0 20px 20px">
+        默认按钮 : <br><br>
+        <button class="display-inline button-style right-btn default-btn">primary</button>
+        <button class="display-inline button-style cancel-btn default-btn">primary</button>
+    </div>
+    <!--小按钮-->
+    <div style="margin: 20px 0 20px 20px">
+        小按钮 : <br><br>
+        <button class="display-inline button-style right-btn small-btn">primary</button>
+        <button class="display-inline button-style cancel-btn small-btn">primary</button>
+    </div>
+    <!--大空心按钮-->
+    <div style="margin: 20px 0 20px 20px">
+        大空心按钮 : <br><br>
+        <button class="button-style display-inline large-btn hollow-right-btn">hollow</button>
+        <button class="button-style display-inline large-btn hollow-cancel-btn">hollow</button>
+    </div>
+    <!--默认空心按钮-->
+    <div style="margin: 20px 0 20px 20px">
+        默认空心按钮 : <br><br>
+        <button class="button-style display-inline default-btn hollow-right-btn">hollow</button>
+        <button class="button-style display-inline default-btn hollow-cancel-btn">hollow</button>
+    </div>
+    <!--小空心按钮-->
+    <div style="margin: 20px 0 20px 20px">
+        小空心按钮 : <br><br>
+        <button class="button-style display-inline small-btn hollow-right-btn">hollow</button>
+        <button class="button-style display-inline small-btn hollow-cancel-btn">hollow</button>
+    </div>
+
+</div>
+<div class="display-inline vertical-top" style="width: 340px">
+    <!--输入框-->
+    <div style="margin: 20px">
+        大输入框 : <br><br>
+        <input type="text" class="input-style display-inline vertical-middle input-style-large" placeholder="large size">
+    </div>
+    <div style="margin: 20px">
+        默认输入框 : <br><br>
+        <input type="text" class="input-style display-inline vertical-middle input-style-default" placeholder="default size">
+    </div>
+    <div style="margin: 20px">
+        小输入框 : <br><br>
+        <input type="text" class="input-style display-inline vertical-middle input-style-small" placeholder="small size">
+    </div>
+    <!--<div style="margin: 20px">-->
+        <!--选择输入框 : <br><br>-->
+        <!--<div class="position-relative" >-->
+            <!--<input type="text" id="input_search" class="input-style input-style-default" placeholder="请选择" onblur="hiddenDrop('company_drop')" onfocus="onDrop('company_drop','input_search')">-->
+            <!--<div class="drop-select" id="company_drop" style="display: none;">-->
+                <!--<ul>-->
+                    <!--<li><a href="#">苏州</a></li>-->
+                    <!--<li><a href="#">上海</a></li>-->
+                    <!--<li><a href="#">昆山</a></li>-->
+                    <!--<li><a href="#">石家庄</a></li>-->
+                    <!--<li><a href="#">武汉</a></li>-->
+                    <!--<li><a href="#">北京</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div style="margin: 20px">
+        标题加普通输入框 : <br><br>
+        <div class="title-and-input" style="word-spacing: -5px">
+            <div class="display-inline button-style right-btn default-btn vertical-top right-tb-border-none">姓名</div>
+            <div class="input-width display-inline vertical-top">
+                <input type="text" class="input-style vertical-middle input-style-default left-tb-border-none" placeholder="default size">
+            </div>
+
+        </div>
+    </div>
+    <div style="margin: 20px">
+        标题加选择输入框 : <br><br>
+        <div class="title-and-input" style="word-spacing: -5px">
+            <div class="display-inline button-style right-btn default-btn vertical-top right-tb-border-none">性别</div>
+            <div class="input-width display-inline vertical-top">
+                <input type="text" id="input_search" class="input-style input-style-default left-tb-border-none" placeholder="请选择..." onblur="hiddenDrop('company_drop')" onfocus="onDrop('company_drop','input_search')">
+                <div class="drop-select" id="company_drop" style="display: none;">
+                    <ul>
+                        <li><a href="#">男</a></li>
+                        <li><a href="#">女</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <div class="display-inline vertical-top" style="width: 400px">
+        <div style="margin: 20px">
+        输入文本框 : <br><br>
+        <textarea name="textarea" class="textArea-style" placeholder="请输入..."></textarea>
         </div>
     </div>
 </form>
