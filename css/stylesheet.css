@@ -56,11 +56,9 @@
     border-radius: 0;
     word-spacing: normal;
 }
-.btn-group .btn:first-child,
-.form-line > *:first-child{
-    border-radius: 0 0 2px 2px;
+.btn-group > *:first-child{
+    border-radius: 5px 0 0 5px;
 }
-.btn-group .btn:last-child,
-.form-line > *:last-child{
-    border-radius: 2px 2px 0 0;
+.btn-group > *:last-child{
+    border-radius: 0 5px 5px 0;
 }
