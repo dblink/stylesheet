@@ -240,6 +240,35 @@
     border-radius: 0 4px 4px 0;
 }
 
+.many-drop-input-line .input-select-style {
+    border-radius: 0 4px 4px 0;
+}
+
+/*.many-drop-input-line .input-select-style:last-child {*/
+    /*border-radius: 0 4px 4px 0;*/
+/*}*/
+
+/*下拉文本选择样式*/
+.many-drop-select-line >*{
+    border-radius: 0;
+}
+
+.many-drop-select-line .select-put{
+    border-radius: 0;
+}
+
+.many-drop-select-line .input-select-style{
+    border-radius: 0;
+}
+
+.many-drop-select-line .select-put:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.many-drop-select-line .input-select-style:last-child {
+    border-radius: 0 4px 4px 0 !important;
+}
+
 /*单选框样式*/
 .demo-label {
     font-size: 14px;
@@ -344,17 +373,63 @@
     cursor: pointer;
     display: inline-block;
     border-radius: 4px;
+    position: relative;
+    vertical-align: top;
 }
 
 .select-put {
+    display: inline-block;
     outline: none;
     width: 100%;
-    background-color: #1890ff;
     color: #fcfcfc;
     position: relative;
     -webkit-transition: all 0.3s cubic-bezier(.645, .045, .355, 1);
     transition: all 0.3s cubic-bezier(.645, .045, .355, 1);
     border-radius: 4px;
+}
+
+.select-put-bg1{
+    background-color: #1890ff;
+}
+
+.select-put-bg1:hover {
+    background-color: #40a9ff;
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-put-bg1:active {
+    color: #fff;
+    background-color: #096dd9;
+    border-color: #096dd9;
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.select-put-bg1 p {
+    width: 90px;
+    padding-left: 20px;
+    border-right: 1px solid #40a9ff;
+}
+
+.select-put-bg2{
+    background-color: #f3464f;
+}
+
+.select-put-bg2:hover {
+    background-color: #f9646c;
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-put-bg2:active {
+    color: #fff;
+    background-color: #d83a42;
+    border-color: #d83a42;
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.select-put-bg2 p {
+    width: 90px;
+    padding-left: 20px;
+    border-right: 1px solid #f9646c;
 }
 
 .select-put-large{
@@ -373,24 +448,6 @@
     height: 28px;
     line-height: 28px;
     font-size: 14px;
-}
-
-.select-put:hover {
-    background-color: #40a9ff;
-    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
-}
-
-.select-put:active {
-    color: #fff;
-    background-color: #096dd9;
-    border-color: #096dd9;
-    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3);
-}
-
-.select-put p {
-    width: 90px;
-    padding-left: 20px;
-    border-right: 1px solid #40a9ff;
 }
 
 .drop-select {
@@ -444,11 +501,22 @@
     border-color: #fcfcfc transparent transparent transparent;
 }
 
+/*文本选择列表*/
+.input-select-content{
+    outline: none;
+    width: 140px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 4px;
+    position: relative;
+    vertical-align: top;
+}
+
 /*文本框样式*/
 .input-style {
      position: relative;
      text-align: left;
-     width: 100%;
+     width: 140px;
      border-radius: 4px;
      border: 1px solid #d9d9d9;
      color: #666;
@@ -465,6 +533,32 @@
 }
 
 .input-style:focus {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(24,144,255,.2);
+    box-shadow: 0 0 0 2px rgba(24,144,255,.2);
+}
+
+/*文本框样式*/
+.input-select-style {
+    position: relative;
+    text-align: left;
+    width: 140px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    color: #666;
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    line-height: 1.5;
+}
+
+.input-select-style::placeholder{
+    color: #ccc;
+}
+
+.input-select-style:hover {
+    border-color: #40a9ff;
+}
+
+.input-select-style:focus {
     outline: 0;
     -webkit-box-shadow: 0 0 0 2px rgba(24,144,255,.2);
     box-shadow: 0 0 0 2px rgba(24,144,255,.2);
@@ -521,4 +615,21 @@
     outline: 0;
     -webkit-box-shadow: 0 0 0 2px rgba(24,144,255,.2);
     box-shadow: 0 0 0 2px rgba(24,144,255,.2);
+}
+
+.ant-group{
+    word-spacing: -5px;
+}
+
+.ant-group>* ,.ant-group .select-style .select-put ,.ant-group .input-select-content .input-select-style {
+    border-radius: 0;
+    border-left-color: #cccccc;
+}
+
+.ant-group>:first-child, .ant-group>.select-style:first-child>.select-put, .ant-group>.input-select-content:first-child>.input-select-style {
+    border-radius: 4px 0 0 4px;
+}
+
+.ant-group>:last-child, .ant-group>.select-style:last-child>.select-put, .ant-group>.input-select-content:last-child>.input-select-style {
+    border-radius: 0 4px 4px 0;
 }
