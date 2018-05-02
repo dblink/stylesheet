@@ -9,22 +9,22 @@
 <body>
 <div class="ant-calendar-picker">
     <div class="ant-calendar" tabindex="0">
-        <div class="ant-calendar-panel">
+        <div class="ant-calendar-panel" tabindex="0">
             <div class="ant-calendar-input-wrap">
                 <div class="ant-calendar-date-input-wrap">
                     <input class="ant-calendar-input " placeholder="请选择日期" value="">
                 </div>
             </div>
-            <div class="ant-calendar-date-panel">
+            <div class="ant-calendar-date-panel" style="display: none">
                 <div class="ant-calendar-header">
                     <div style="position: relative">
                         <a class="ant-calendar-prev-day-btn" role="button" title="昨天">«</a>
                         <span class="ant-calendar-my-select">
-                            <a class="ant-calendar-select" role="button" title="选择年份"> 2018 </a>
+                            <a class="ant-calendar-select year-select" role="button" title="选择年份"> 2018 </a>
                             <span class="ant-calendar-select">-</span>
-                            <a class="ant-calendar-select" role="button" title="选择月份"> 4 </a>
+                            <a class="ant-calendar-select month-select" role="button" title="选择月份"> 4 </a>
                             <span class="ant-calendar-select">-</span>
-                            <a class="ant-calendar-select" role="button" title="选择日期"> 27 </a>
+                            <a class="ant-calendar-select date-select" role="button" title="选择日期"> 27 </a>
                         </span>
                         <a class="ant-calendar-next-day-btn" role="button" title="明天">»</a>
                     </div>
@@ -198,8 +198,96 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="ant-calendar-year-panel" style="display: none">
+                    <table class="ant-calendar-year-panel-table">
+                        <tbody class="ant-calendar-year-panel-body">
+                            <tr role="row">
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2014</a>
+                                </td>
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2015</a>
+                                </td>
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2016</a>
+                                </td>
+                            </tr>
+                            <tr role="row">
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2017</a>
+                                </td>
+                                <td role="gridcell" class="ant-calendar-year-panel-cell ant-calendar-year-panel-selected-cell">
+                                    <a class="ant-calendar-year-panel-year">2018</a>
+                                </td>
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2019</a>
+                                </td>
+                            </tr>
+                            <tr role="row">
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2020</a>
+                                </td>
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2021</a>
+                                </td>
+                                <td role="gridcell" class="ant-calendar-year-panel-cell">
+                                    <a class="ant-calendar-year-panel-year">2022</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ant-calendar-month-panel" style="display: none">
+                    <table class="ant-calendar-month-panel-table">
+                        <tbody class="ant-calendar-month-panel-body">
+                        <tr role="row">
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">1</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">2</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">3</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell ant-calendar-month-panel-selected-cell">
+                                <a class="ant-calendar-year-panel-year">4</a>
+                            </td>
+                        </tr>
+                        <tr role="row">
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">5</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">6</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">7</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">8</a>
+                            </td>
+                        </tr>
+                        <tr role="row">
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">9</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">10</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">11</a>
+                            </td>
+                            <td role="gridcell" class="ant-calendar-month-panel-cell">
+                                <a class="ant-calendar-year-panel-year">12</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="ant-calendar-footer">
                     <span class="ant-calendar-footer-btn">
+                        <div class="ant-calendar-btn today-on">今天</div>
                         <div class="ant-calendar-btn confirm-on">确认</div>
                         <div class="ant-calendar-btn cancel-on">取消</div>
                     </span>
@@ -210,14 +298,44 @@
 </div>
 <script>
     window.onload = function () {
-        let _calendar_input = document.getElementsByClassName('ant-calendar-input-wrap');
+        let _calendar_input = document.getElementsByClassName('ant-calendar-input');
         let _calendar_all = document.getElementsByClassName('ant-calendar-panel');
-        for (let i=0;i<_calendar_input.length;i++){
-            _calendar_input[i].querySelector('input').onfocus = function () {
-                _calendar_all[i].getElementsByClassName('ant-calendar-date-panel')[i].style.display = 'block';
+        let _year_select = document.getElementsByClassName('ant-calendar-year-panel');
+        for (let i=0;i<_calendar_all.length;i++){
+            _calendar_input[i].onfocus = function () {
+                _calendar_all[i].getElementsByClassName('ant-calendar-date-panel')[0].style.display = 'block';
+            };
+            _calendar_all[i].onfocus = function () {
+                _calendar_all[i].getElementsByClassName('ant-calendar-date-panel')[0].style.display = 'block';
+            };
+            _calendar_input[i].onblur = function () {
+                _calendar_all[i].getElementsByClassName('ant-calendar-date-panel')[0].style.display = 'none';
+            };
+            _calendar_all[i].onblur = function () {
+                _calendar_all[i].getElementsByClassName('ant-calendar-date-panel')[0].style.display = 'none';
             }
-            _calendar_input[i].querySelector('input').onblur = function () {
-                _calendar_all[i].getElementsByClassName('ant-calendar-date-panel')[i].style.display = 'none';
+        }
+        let _ant_calendar_select = document.getElementsByClassName('ant-calendar-my-select');
+        for (let i=0;i<_calendar_all.length;i++){
+            _ant_calendar_select[i].getElementsByClassName('year-select')[0].onmousedown = function () {
+                if (_calendar_all[i].getElementsByClassName('ant-calendar-year-panel')[0].style.display === 'none' ){
+                    _calendar_all[i].getElementsByClassName('ant-calendar-month-panel')[0].style.display = 'none';
+                    _calendar_all[i].getElementsByClassName('ant-calendar-year-panel')[0].style.display = 'block';
+                }else{
+                    _calendar_all[i].getElementsByClassName('ant-calendar-year-panel')[0].style.display = 'none';
+                }
+            };
+            _ant_calendar_select[i].getElementsByClassName('month-select')[0].onmousedown = function () {
+                if (_calendar_all[i].getElementsByClassName('ant-calendar-month-panel')[0].style.display === 'none' ){
+                    _calendar_all[i].getElementsByClassName('ant-calendar-year-panel')[0].style.display = 'none';
+                    _calendar_all[i].getElementsByClassName('ant-calendar-month-panel')[0].style.display = 'block';
+                }else{
+                    _calendar_all[i].getElementsByClassName('ant-calendar-month-panel')[0].style.display = 'none';
+                }
+            };
+            _ant_calendar_select[i].getElementsByClassName('date-select')[0].onmousedown = function () {
+                _calendar_all[i].getElementsByClassName('ant-calendar-year-panel')[0].style.display = 'none';
+                _calendar_all[i].getElementsByClassName('ant-calendar-month-panel')[0].style.display = 'none';
             }
         }
     }
